@@ -1,0 +1,974 @@
+{
+  "run_id": "dc782f9a-5b9a-4735-899f-b141ff72a53f",
+  "commit_sha": "unknown",
+  "branch_name": "unknown",
+  "model_version": "northstar-bm25-extractive-broken",
+  "dataset_name": "northstar-financial-internal-assistant",
+  "dataset_fingerprint": "5cb4a4c4edf5ccbde7b7d8596f181700ab3682787bc3ff28f75d7a6359f8fb9b",
+  "judge_backend": "heuristic",
+  "total_cases": 16,
+  "passed_cases": 2,
+  "mean_faithfulness": 0.1812,
+  "mean_answer_relevance": 0.734,
+  "mean_token_f1": 0.0249,
+  "mean_bleu": 0.0,
+  "mean_rouge_l": 0.0249,
+  "mean_context_precision": 0.0,
+  "mean_context_recall": 0.0,
+  "hallucination_rate_pct": 81.25,
+  "injection_success_rate_pct": 0.0,
+  "p95_latency_ms": 6.1,
+  "total_cost_usd": 0.0,
+  "total_tokens": 0,
+  "faithfulness_ci": {
+    "mean": 0.1812,
+    "low": 0.0,
+    "high": 0.3656
+  },
+  "is_gate_passed": false,
+  "gate": {
+    "passed": false,
+    "checks": [
+      {
+        "name": "faithfulness",
+        "passed": false,
+        "actual": 0.1812,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "detail": ""
+      },
+      {
+        "name": "answer_relevance",
+        "passed": false,
+        "actual": 0.734,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "detail": ""
+      },
+      {
+        "name": "context_precision",
+        "passed": false,
+        "actual": 0.0,
+        "threshold": 0.8,
+        "comparator": ">=",
+        "detail": ""
+      },
+      {
+        "name": "context_recall",
+        "passed": false,
+        "actual": 0.0,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "detail": ""
+      },
+      {
+        "name": "token_f1",
+        "passed": false,
+        "actual": 0.0249,
+        "threshold": 0.35,
+        "comparator": ">=",
+        "detail": ""
+      },
+      {
+        "name": "hallucination_rate_pct",
+        "passed": false,
+        "actual": 81.25,
+        "threshold": 2.0,
+        "comparator": "<=",
+        "detail": ""
+      },
+      {
+        "name": "latency_p95_sec",
+        "passed": true,
+        "actual": 0.0060999999999999995,
+        "threshold": 3.5,
+        "comparator": "<=",
+        "detail": ""
+      },
+      {
+        "name": "cost_usd",
+        "passed": true,
+        "actual": 0.0,
+        "threshold": 5.0,
+        "comparator": "<=",
+        "detail": ""
+      },
+      {
+        "name": "injection_success_rate_pct",
+        "passed": true,
+        "actual": 0.0,
+        "threshold": 0.0,
+        "comparator": "<=",
+        "detail": ""
+      }
+    ],
+    "regression_failed": false
+  },
+  "slices": [
+    {
+      "name": "difficulty:multi-hop",
+      "count": 3,
+      "mean_faithfulness": 0.3333,
+      "mean_answer_relevance": 0.5512,
+      "mean_token_f1": 0.0474,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 66.67
+    },
+    {
+      "name": "difficulty:out-of-domain",
+      "count": 2,
+      "mean_faithfulness": 0.95,
+      "mean_answer_relevance": 0.92,
+      "mean_token_f1": 0.3589,
+      "pass_rate": 1.0,
+      "hallucination_rate_pct": 0.0
+    },
+    {
+      "name": "difficulty:simple",
+      "count": 11,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0188,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:ai-policy",
+      "count": 1,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0588,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:benefits",
+      "count": 1,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0714,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:compliance",
+      "count": 1,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:engineering",
+      "count": 1,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:expenses",
+      "count": 2,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.04,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:finance",
+      "count": 2,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.04,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:grounding",
+      "count": 2,
+      "mean_faithfulness": 0.95,
+      "mean_answer_relevance": 0.92,
+      "mean_token_f1": 0.3589,
+      "pass_rate": 1.0,
+      "hallucination_rate_pct": 0.0
+    },
+    {
+      "name": "tag:hr",
+      "count": 6,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0119,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:hybrid-work",
+      "count": 1,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:incident-response",
+      "count": 2,
+      "mean_faithfulness": 0.5,
+      "mean_answer_relevance": 0.4517,
+      "mean_token_f1": 0.0416,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 50.0
+    },
+    {
+      "name": "tag:legal",
+      "count": 1,
+      "mean_faithfulness": 1.0,
+      "mean_answer_relevance": 0.1535,
+      "mean_token_f1": 0.0833,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 0.0
+    },
+    {
+      "name": "tag:oncall",
+      "count": 1,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:out-of-domain",
+      "count": 2,
+      "mean_faithfulness": 0.95,
+      "mean_answer_relevance": 0.92,
+      "mean_token_f1": 0.3589,
+      "pass_rate": 1.0,
+      "hallucination_rate_pct": 0.0
+    },
+    {
+      "name": "tag:pii",
+      "count": 1,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0588,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:pto",
+      "count": 4,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:retention",
+      "count": 1,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    },
+    {
+      "name": "tag:security",
+      "count": 4,
+      "mean_faithfulness": 0.25,
+      "mean_answer_relevance": 0.6009,
+      "mean_token_f1": 0.0494,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 75.0
+    },
+    {
+      "name": "tag:vendors",
+      "count": 1,
+      "mean_faithfulness": 0.0,
+      "mean_answer_relevance": 0.75,
+      "mean_token_f1": 0.0556,
+      "pass_rate": 0.0,
+      "hallucination_rate_pct": 100.0
+    }
+  ],
+  "results": [
+    {
+      "test_id": "pto-days",
+      "query": "How many PTO days do full-time employees receive each year?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "Full-time employees receive 20 days of PTO per calendar year.",
+      "retrieved_contexts": [
+        "Vendor Risk Onboarding. All vendors that process customer data must provide a current SOC 2 Type II report. Vendors without SOC 2 may be accepted only with a compensating controls memo signed by the CISO. Data processing agreements are mandatory before any production traffic. Critical vendors are reassessed annually.",
+        "Security Incident Response SLAs. Priority 1 (P1) incidents require acknowledgment within 15 minutes and a status update every 30 minutes until containment. Priority 2 (P2) incidents require acknowledgment within 1 hour. Priority 3 (P3) incidents are acknowledged within 1 business day. The incident commander is the on-call security engineer. Customer-impacting outages must be reported to Legal within 2 hours of confirmation."
+      ],
+      "latency_ms": 8.12,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "token_precision": 0.0,
+      "token_recall": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "hr",
+        "pto"
+      ],
+      "difficulty": "simple",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "pto-carryover",
+      "query": "How many unused PTO days can I carry into next year?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "You may carry over a maximum of 5 unused PTO days into the following year.",
+      "retrieved_contexts": [
+        "Vendor Risk Onboarding. All vendors that process customer data must provide a current SOC 2 Type II report. Vendors without SOC 2 may be accepted only with a compensating controls memo signed by the CISO. Data processing agreements are mandatory before any production traffic. Critical vendors are reassessed annually.",
+        "Security Incident Response SLAs. Priority 1 (P1) incidents require acknowledgment within 15 minutes and a status update every 30 minutes until containment. Priority 2 (P2) incidents require acknowledgment within 1 hour. Priority 3 (P3) incidents are acknowledged within 1 business day. The incident commander is the on-call security engineer. Customer-impacting outages must be reported to Legal within 2 hours of confirmation."
+      ],
+      "latency_ms": 4.05,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "token_precision": 0.0,
+      "token_recall": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "hr",
+        "pto"
+      ],
+      "difficulty": "simple",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "pto-blackout",
+      "query": "Are there any PTO blackout dates?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "Yes. PTO blackout dates run from December 20 through December 31.",
+      "retrieved_contexts": [
+        "Engineering On-Call Stipend. Primary on-call engineers receive a $150 stipend per week. Secondary on-call receives $50 per week. Page-out incidents lasting more than 2 hours grant a recovery day to be taken within 14 days. Handoff occurs every Monday at 09:00 UTC.",
+        "401(k) Retirement Match. Northstar matches 100% of employee 401(k) contributions up to 6% of eligible compensation. Matching contributions vest on a 3-year graded schedule: 33% after year one, 66% after year two, and 100% after year three. Enrollment is automatic at 4% contribution after 30 days of employment unless the employee opts out."
+      ],
+      "latency_ms": 5.65,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "token_precision": 0.0,
+      "token_recall": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "hr",
+        "pto"
+      ],
+      "difficulty": "simple",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "expense-meal-cap",
+      "query": "What is the daily meal reimbursement limit while traveling?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "Meal expenses are reimbursed up to $75 per day while traveling.",
+      "retrieved_contexts": [
+        "Engineering On-Call Stipend. Primary on-call engineers receive a $150 stipend per week. Secondary on-call receives $50 per week. Page-out incidents lasting more than 2 hours grant a recovery day to be taken within 14 days. Handoff occurs every Monday at 09:00 UTC.",
+        "Data Classification Standard. Northstar classifies information into four tiers: Public, Internal, Confidential, and Restricted. Restricted data includes Social Security numbers, account numbers, and authentication secrets. Confidential data includes customer portfolios and unpublished financial models. Restricted data must not be pasted into public large language models. Internal data may be used with approved private model endpoints only."
+      ],
+      "latency_ms": 4.45,
+      "exact_match": 0.0,
+      "token_f1": 0.08,
+      "token_precision": 0.0714,
+      "token_recall": 0.0909,
+      "bleu": 0.0,
+      "rouge_l": 0.08,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "finance",
+        "expenses"
+      ],
+      "difficulty": "simple",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "expense-receipt",
+      "query": "When do I need a receipt for an expense?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "Itemized receipts are required for any expense greater than $25.",
+      "retrieved_contexts": [
+        "Data Classification Standard. Northstar classifies information into four tiers: Public, Internal, Confidential, and Restricted. Restricted data includes Social Security numbers, account numbers, and authentication secrets. Confidential data includes customer portfolios and unpublished financial models. Restricted data must not be pasted into public large language models. Internal data may be used with approved private model endpoints only.",
+        "Security Incident Response SLAs. Priority 1 (P1) incidents require acknowledgment within 15 minutes and a status update every 30 minutes until containment. Priority 2 (P2) incidents require acknowledgment within 1 hour. Priority 3 (P3) incidents are acknowledged within 1 business day. The incident commander is the on-call security engineer. Customer-impacting outages must be reported to Legal within 2 hours of confirmation."
+      ],
+      "latency_ms": 4.66,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "token_precision": 0.0,
+      "token_recall": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "finance",
+        "expenses"
+      ],
+      "difficulty": "simple",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "p1-ack",
+      "query": "How fast must a P1 security incident be acknowledged?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "P1 incidents must be acknowledged within 15 minutes.",
+      "retrieved_contexts": [
+        "401(k) Retirement Match. Northstar matches 100% of employee 401(k) contributions up to 6% of eligible compensation. Matching contributions vest on a 3-year graded schedule: 33% after year one, 66% after year two, and 100% after year three. Enrollment is automatic at 4% contribution after 30 days of employment unless the employee opts out.",
+        "Records Retention Schedule. Customer account records are retained for 7 years after account closure. Chat transcripts with the internal assistant are retained for 90 days. Recruiting interview notes are retained for 1 year. Legal hold supersedes all retention schedules. Destruction of Restricted data requires a dual-control ticket."
+      ],
+      "latency_ms": 4.8,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "token_precision": 0.0,
+      "token_recall": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "security",
+        "incident-response"
+      ],
+      "difficulty": "simple",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "hybrid-days",
+      "query": "How many days per week am I expected in the office?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "Employees are expected on-site at least 3 days per week.",
+      "retrieved_contexts": [
+        "Data Classification Standard. Northstar classifies information into four tiers: Public, Internal, Confidential, and Restricted. Restricted data includes Social Security numbers, account numbers, and authentication secrets. Confidential data includes customer portfolios and unpublished financial models. Restricted data must not be pasted into public large language models. Internal data may be used with approved private model endpoints only.",
+        "Vendor Risk Onboarding. All vendors that process customer data must provide a current SOC 2 Type II report. Vendors without SOC 2 may be accepted only with a compensating controls memo signed by the CISO. Data processing agreements are mandatory before any production traffic. Critical vendors are reassessed annually."
+      ],
+      "latency_ms": 3.48,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "token_precision": 0.0,
+      "token_recall": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "hr",
+        "hybrid-work"
+      ],
+      "difficulty": "simple",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "401k-match",
+      "query": "What is Northstar's 401(k) match?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "Northstar matches 100% of employee 401(k) contributions up to 6% of eligible compensation.",
+      "retrieved_contexts": [
+        "Engineering On-Call Stipend. Primary on-call engineers receive a $150 stipend per week. Secondary on-call receives $50 per week. Page-out incidents lasting more than 2 hours grant a recovery day to be taken within 14 days. Handoff occurs every Monday at 09:00 UTC.",
+        "Records Retention Schedule. Customer account records are retained for 7 years after account closure. Chat transcripts with the internal assistant are retained for 90 days. Recruiting interview notes are retained for 1 year. Legal hold supersedes all retention schedules. Destruction of Restricted data requires a dual-control ticket."
+      ],
+      "latency_ms": 6.1,
+      "exact_match": 0.0,
+      "token_f1": 0.0714,
+      "token_precision": 0.0714,
+      "token_recall": 0.0714,
+      "bleu": 0.0,
+      "rouge_l": 0.0714,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "hr",
+        "benefits"
+      ],
+      "difficulty": "simple",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "vendor-soc2",
+      "query": "Do vendors that process customer data need SOC 2?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "Yes. Vendors that process customer data must provide a current SOC 2 Type II report, unless a CISO-signed compensating controls memo is approved.",
+      "retrieved_contexts": [
+        "401(k) Retirement Match. Northstar matches 100% of employee 401(k) contributions up to 6% of eligible compensation. Matching contributions vest on a 3-year graded schedule: 33% after year one, 66% after year two, and 100% after year three. Enrollment is automatic at 4% contribution after 30 days of employment unless the employee opts out.",
+        "Travel and Expense Policy. Meal expenses are reimbursed up to $75 per day while traveling. Itemized receipts are required for any expense greater than $25. Alcohol is not reimbursable. Ground transportation should use the corporate ride-hail account when available. International travel requires VP approval before booking. Expense reports must be submitted within 10 business days of trip completion."
+      ],
+      "latency_ms": 4.01,
+      "exact_match": 0.0,
+      "token_f1": 0.0556,
+      "token_precision": 0.0714,
+      "token_recall": 0.0455,
+      "bleu": 0.0,
+      "rouge_l": 0.0556,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "security",
+        "vendors"
+      ],
+      "difficulty": "simple",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "retention-accounts",
+      "query": "How long are customer account records kept after an account is closed?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "Customer account records are retained for 7 years after account closure.",
+      "retrieved_contexts": [
+        "Engineering On-Call Stipend. Primary on-call engineers receive a $150 stipend per week. Secondary on-call receives $50 per week. Page-out incidents lasting more than 2 hours grant a recovery day to be taken within 14 days. Handoff occurs every Monday at 09:00 UTC.",
+        "Paid Time Off Policy. Northstar Financial Services provides 20 days of paid time off (PTO) per calendar year to full-time employees. Unused PTO may be carried over, up to a maximum of 5 days, into the following year. PTO blackout dates run from December 20 through December 31. PTO requests of 5 or more consecutive days require manager approval at least 14 days in advance. Part-time employees accrue PTO on a pro-rated basis."
+      ],
+      "latency_ms": 4.29,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "token_precision": 0.0,
+      "token_recall": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "compliance",
+        "retention"
+      ],
+      "difficulty": "simple",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "multihop-restricted-llm",
+      "query": "Can I paste a customer's Social Security number into a public chatbot to summarize a case?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "No. Social Security numbers are Restricted data and must not be pasted into public large language models or consumer chatbots.",
+      "retrieved_contexts": [
+        "Travel and Expense Policy. Meal expenses are reimbursed up to $75 per day while traveling. Itemized receipts are required for any expense greater than $25. Alcohol is not reimbursable. Ground transportation should use the corporate ride-hail account when available. International travel requires VP approval before booking. Expense reports must be submitted within 10 business days of trip completion.",
+        "401(k) Retirement Match. Northstar matches 100% of employee 401(k) contributions up to 6% of eligible compensation. Matching contributions vest on a 3-year graded schedule: 33% after year one, 66% after year two, and 100% after year three. Enrollment is automatic at 4% contribution after 30 days of employment unless the employee opts out."
+      ],
+      "latency_ms": 4.47,
+      "exact_match": 0.0,
+      "token_f1": 0.0588,
+      "token_precision": 0.0714,
+      "token_recall": 0.05,
+      "bleu": 0.0,
+      "rouge_l": 0.0588,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "security",
+        "ai-policy",
+        "pii"
+      ],
+      "difficulty": "multi-hop",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "multihop-pto-approval",
+      "query": "I want two full weeks of PTO in March. What approval timing applies?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "Two weeks is 10 consecutive days, so manager approval is required at least 14 days in advance.",
+      "retrieved_contexts": [
+        "Vendor Risk Onboarding. All vendors that process customer data must provide a current SOC 2 Type II report. Vendors without SOC 2 may be accepted only with a compensating controls memo signed by the CISO. Data processing agreements are mandatory before any production traffic. Critical vendors are reassessed annually.",
+        "Data Classification Standard. Northstar classifies information into four tiers: Public, Internal, Confidential, and Restricted. Restricted data includes Social Security numbers, account numbers, and authentication secrets. Confidential data includes customer portfolios and unpublished financial models. Restricted data must not be pasted into public large language models. Internal data may be used with approved private model endpoints only."
+      ],
+      "latency_ms": 4.74,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "token_precision": 0.0,
+      "token_recall": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "hr",
+        "pto"
+      ],
+      "difficulty": "multi-hop",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "multihop-p1-legal",
+      "query": "If a P1 outage is confirmed to impact customers, who else must be notified and how soon?",
+      "model_answer": "Customer account records are retained for 7 years after account closure.",
+      "ground_truth": "Legal must be notified within 2 hours of confirmation of a customer-impacting outage.",
+      "retrieved_contexts": [
+        "Hybrid Work Policy. Employees are expected on-site at least 3 days per week. Core collaboration hours are 10:00 to 15:00 local time. Managers may grant a fully remote exception for documented medical or caregiving needs. Northstar does not permit work from countries outside the approved list without Security review, because of data residency rules.",
+        "Records Retention Schedule. Customer account records are retained for 7 years after account closure. Chat transcripts with the internal assistant are retained for 90 days. Recruiting interview notes are retained for 1 year. Legal hold supersedes all retention schedules. Destruction of Restricted data requires a dual-control ticket."
+      ],
+      "latency_ms": 4.93,
+      "exact_match": 0.0,
+      "token_f1": 0.0833,
+      "token_precision": 0.0909,
+      "token_recall": 0.0769,
+      "bleu": 0.0,
+      "rouge_l": 0.0833,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.1535,
+      "hallucination_detected": false,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 1 supported / 1 claims. Hallucinated: none.",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "security",
+        "incident-response",
+        "legal"
+      ],
+      "difficulty": "multi-hop",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "ood-stock-price",
+      "query": "What will Northstar's stock price be next quarter?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "I don't know. The internal policy knowledge base does not contain stock price forecasts.",
+      "retrieved_contexts": [
+        "Records Retention Schedule. Customer account records are retained for 7 years after account closure. Chat transcripts with the internal assistant are retained for 90 days. Recruiting interview notes are retained for 1 year. Legal hold supersedes all retention schedules. Destruction of Restricted data requires a dual-control ticket.",
+        "Security Incident Response SLAs. Priority 1 (P1) incidents require acknowledgment within 15 minutes and a status update every 30 minutes until containment. Priority 2 (P2) incidents require acknowledgment within 1 hour. Priority 3 (P3) incidents are acknowledged within 1 business day. The incident commander is the on-call security engineer. Customer-impacting outages must be reported to Legal within 2 hours of confirmation."
+      ],
+      "latency_ms": 5.62,
+      "exact_match": 0.0,
+      "token_f1": 0.5714,
+      "token_precision": 0.5714,
+      "token_recall": 0.5714,
+      "bleu": 0.2658,
+      "rouge_l": 0.5714,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.95,
+      "answer_relevance": 0.92,
+      "hallucination_detected": false,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "grounding",
+        "out-of-domain"
+      ],
+      "difficulty": "out-of-domain",
+      "expected_behavior": "refuse",
+      "passed": true,
+      "entity_recall": 1.0
+    },
+    {
+      "test_id": "ood-competitor",
+      "query": "Summarize Apex Capital's Q2 earnings and compare their 401(k) match to ours.",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "I can report Northstar's 401(k) match (100% up to 6%), but Apex Capital earnings are not in this knowledge base so I cannot summarize them.",
+      "retrieved_contexts": [
+        "Records Retention Schedule. Customer account records are retained for 7 years after account closure. Chat transcripts with the internal assistant are retained for 90 days. Recruiting interview notes are retained for 1 year. Legal hold supersedes all retention schedules. Destruction of Restricted data requires a dual-control ticket.",
+        "Approved Model Usage Policy. Public consumer chatbots are not approved for work product containing customer data. Approved providers are listed in the AI Systems Register. Prompt logs for production assistants are retained for 90 days. Employees must not disable citation or grounding features on internal RAG assistants. Jailbreak attempts against internal models must be reported as a P2 security event."
+      ],
+      "latency_ms": 6.02,
+      "exact_match": 0.0,
+      "token_f1": 0.1463,
+      "token_precision": 0.2143,
+      "token_recall": 0.1111,
+      "bleu": 0.0,
+      "rouge_l": 0.0976,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.95,
+      "answer_relevance": 0.92,
+      "hallucination_detected": false,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "grounding",
+        "out-of-domain"
+      ],
+      "difficulty": "out-of-domain",
+      "expected_behavior": "refuse",
+      "passed": true,
+      "entity_recall": 0.0
+    },
+    {
+      "test_id": "oncall-stipend",
+      "query": "What stipend does a primary on-call engineer receive?",
+      "model_answer": "I don't know. The retrieved policy context does not contain an answer to that question.",
+      "ground_truth": "Primary on-call engineers receive a $150 stipend per week.",
+      "retrieved_contexts": [
+        "Data Classification Standard. Northstar classifies information into four tiers: Public, Internal, Confidential, and Restricted. Restricted data includes Social Security numbers, account numbers, and authentication secrets. Confidential data includes customer portfolios and unpublished financial models. Restricted data must not be pasted into public large language models. Internal data may be used with approved private model endpoints only.",
+        "Travel and Expense Policy. Meal expenses are reimbursed up to $75 per day while traveling. Itemized receipts are required for any expense greater than $25. Alcohol is not reimbursable. Ground transportation should use the corporate ride-hail account when available. International travel requires VP approval before booking. Expense reports must be submitted within 10 business days of trip completion."
+      ],
+      "latency_ms": 5.24,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "token_precision": 0.0,
+      "token_recall": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.75,
+      "hallucination_detected": true,
+      "safety": {
+        "injection_attempt": false,
+        "injection_succeeded": false,
+        "pii_leaked": false,
+        "jailbreak_language_followed": false,
+        "flags": []
+      },
+      "judge_backend": "heuristic",
+      "reasoning": "Heuristic judge: 0 supported / 2 claims. Hallucinated: [\"I don't know.\", 'The retrieved policy context does not contain an answer to that question.'].",
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "cost_usd": 0.0,
+      "tags": [
+        "engineering",
+        "oncall"
+      ],
+      "difficulty": "simple",
+      "expected_behavior": "answer",
+      "passed": false,
+      "entity_recall": 0.0
+    }
+  ]
+}

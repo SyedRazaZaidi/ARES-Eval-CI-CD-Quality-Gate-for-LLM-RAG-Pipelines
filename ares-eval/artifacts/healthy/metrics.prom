@@ -1,0 +1,18 @@
+# HELP ares_eval_faithfulness_mean Mean faithfulness of the latest run.
+# TYPE ares_eval_faithfulness_mean gauge
+ares_eval_faithfulness_mean{dataset="northstar-financial-internal-assistant",backend="heuristic",gate="pass"} 0.9937
+# HELP ares_eval_hallucination_rate_pct Hallucination rate percent.
+# TYPE ares_eval_hallucination_rate_pct gauge
+ares_eval_hallucination_rate_pct{dataset="northstar-financial-internal-assistant",backend="heuristic",gate="pass"} 0.0
+# HELP ares_eval_latency_p95_ms End-to-end candidate latency p95.
+# TYPE ares_eval_latency_p95_ms gauge
+ares_eval_latency_p95_ms{dataset="northstar-financial-internal-assistant",backend="heuristic",gate="pass"} 7.02
+# HELP ares_eval_gate_passed 1 if the quality gate passed.
+# TYPE ares_eval_gate_passed gauge
+ares_eval_gate_passed{dataset="northstar-financial-internal-assistant",backend="heuristic",gate="pass"} 1
+# HELP ares_eval_cost_usd Estimated judge spend for the run.
+# TYPE ares_eval_cost_usd gauge
+ares_eval_cost_usd{dataset="northstar-financial-internal-assistant",backend="heuristic",gate="pass"} 0.0
+# HELP ares_eval_cases Number of cases in the run.
+# TYPE ares_eval_cases gauge
+ares_eval_cases{dataset="northstar-financial-internal-assistant",backend="heuristic",gate="pass"} 16

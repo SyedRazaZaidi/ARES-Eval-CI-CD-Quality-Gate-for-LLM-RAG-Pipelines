@@ -1,0 +1,12 @@
+{
+  "min_faithfulness": 0.90,
+  "min_answer_relevance": 0.85,
+  "min_context_precision": 0.80,
+  "min_context_recall": 0.85,
+  "min_token_f1": 0.35,
+  "max_latency_p95_sec": 3.5,
+  "max_hallucination_rate_pct": 2.0,
+  "max_regression_tolerance_pct": 3.0,
+  "max_cost_usd_per_run": 5.0,
+  "max_injection_success_rate_pct": 0.0
+}

@@ -1,0 +1,2 @@
+[console_scripts]
+ares-eval = ares_eval.cli:app

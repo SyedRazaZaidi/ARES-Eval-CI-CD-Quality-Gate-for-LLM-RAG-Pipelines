@@ -1,0 +1,203 @@
+{
+  "version": "1.0.0",
+  "domain": "northstar-financial-internal-assistant",
+  "description": "Golden suite for the Northstar Financial policy assistant. Cases cover simple lookup, multi-hop policy, out-of-domain refusals, and entity grounding.",
+  "test_cases": [
+    {
+      "id": "pto-days",
+      "query": "How many PTO days do full-time employees receive each year?",
+      "reference_contexts": [
+        "Northstar Financial Services provides 20 days of paid time off (PTO) per calendar year to full-time employees. Unused PTO may be carried over, up to a maximum of 5 days, into the following year."
+      ],
+      "ground_truth_answer": "Full-time employees receive 20 days of PTO per calendar year.",
+      "expected_entities": ["20 days"],
+      "tags": ["hr", "pto"],
+      "difficulty": "simple",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "pto-carryover",
+      "query": "How many unused PTO days can I carry into next year?",
+      "reference_contexts": [
+        "Unused PTO may be carried over, up to a maximum of 5 days, into the following year. PTO blackout dates run from December 20 through December 31."
+      ],
+      "ground_truth_answer": "You may carry over a maximum of 5 unused PTO days into the following year.",
+      "expected_entities": ["5 days"],
+      "tags": ["hr", "pto"],
+      "difficulty": "simple",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "pto-blackout",
+      "query": "Are there any PTO blackout dates?",
+      "reference_contexts": [
+        "PTO blackout dates run from December 20 through December 31. PTO requests of 5 or more consecutive days require manager approval at least 14 days in advance."
+      ],
+      "ground_truth_answer": "Yes. PTO blackout dates run from December 20 through December 31.",
+      "expected_entities": ["December 20", "December 31"],
+      "tags": ["hr", "pto"],
+      "difficulty": "simple",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "expense-meal-cap",
+      "query": "What is the daily meal reimbursement limit while traveling?",
+      "reference_contexts": [
+        "Meal expenses are reimbursed up to $75 per day while traveling. Itemized receipts are required for any expense greater than $25. Alcohol is not reimbursable."
+      ],
+      "ground_truth_answer": "Meal expenses are reimbursed up to $75 per day while traveling.",
+      "expected_entities": ["$75"],
+      "tags": ["finance", "expenses"],
+      "difficulty": "simple",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "expense-receipt",
+      "query": "When do I need a receipt for an expense?",
+      "reference_contexts": [
+        "Itemized receipts are required for any expense greater than $25. Alcohol is not reimbursable."
+      ],
+      "ground_truth_answer": "Itemized receipts are required for any expense greater than $25.",
+      "expected_entities": ["$25"],
+      "tags": ["finance", "expenses"],
+      "difficulty": "simple",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "p1-ack",
+      "query": "How fast must a P1 security incident be acknowledged?",
+      "reference_contexts": [
+        "Priority 1 (P1) incidents require acknowledgment within 15 minutes and a status update every 30 minutes until containment. Priority 2 (P2) incidents require acknowledgment within 1 hour."
+      ],
+      "ground_truth_answer": "P1 incidents must be acknowledged within 15 minutes.",
+      "expected_entities": ["15 minutes"],
+      "tags": ["security", "incident-response"],
+      "difficulty": "simple",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "hybrid-days",
+      "query": "How many days per week am I expected in the office?",
+      "reference_contexts": [
+        "Employees are expected on-site at least 3 days per week. Core collaboration hours are 10:00 to 15:00 local time."
+      ],
+      "ground_truth_answer": "Employees are expected on-site at least 3 days per week.",
+      "expected_entities": ["3 days"],
+      "tags": ["hr", "hybrid-work"],
+      "difficulty": "simple",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "401k-match",
+      "query": "What is Northstar's 401(k) match?",
+      "reference_contexts": [
+        "Northstar matches 100% of employee 401(k) contributions up to 6% of eligible compensation. Matching contributions vest on a 3-year graded schedule."
+      ],
+      "ground_truth_answer": "Northstar matches 100% of employee 401(k) contributions up to 6% of eligible compensation.",
+      "expected_entities": ["6%"],
+      "tags": ["hr", "benefits"],
+      "difficulty": "simple",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "vendor-soc2",
+      "query": "Do vendors that process customer data need SOC 2?",
+      "reference_contexts": [
+        "All vendors that process customer data must provide a current SOC 2 Type II report. Vendors without SOC 2 may be accepted only with a compensating controls memo signed by the CISO."
+      ],
+      "ground_truth_answer": "Yes. Vendors that process customer data must provide a current SOC 2 Type II report, unless a CISO-signed compensating controls memo is approved.",
+      "expected_entities": ["SOC 2 Type II"],
+      "tags": ["security", "vendors"],
+      "difficulty": "simple",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "retention-accounts",
+      "query": "How long are customer account records kept after an account is closed?",
+      "reference_contexts": [
+        "Customer account records are retained for 7 years after account closure. Chat transcripts with the internal assistant are retained for 90 days."
+      ],
+      "ground_truth_answer": "Customer account records are retained for 7 years after account closure.",
+      "expected_entities": ["7 years"],
+      "tags": ["compliance", "retention"],
+      "difficulty": "simple",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "multihop-restricted-llm",
+      "query": "Can I paste a customer's Social Security number into a public chatbot to summarize a case?",
+      "reference_contexts": [
+        "Restricted data includes Social Security numbers, account numbers, and authentication secrets. Restricted data must not be pasted into public large language models.",
+        "Public consumer chatbots are not approved for work product containing customer data."
+      ],
+      "ground_truth_answer": "No. Social Security numbers are Restricted data and must not be pasted into public large language models or consumer chatbots.",
+      "expected_entities": ["Restricted", "Social Security"],
+      "tags": ["security", "ai-policy", "pii"],
+      "difficulty": "multi-hop",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "multihop-pto-approval",
+      "query": "I want two full weeks of PTO in March. What approval timing applies?",
+      "reference_contexts": [
+        "Northstar Financial Services provides 20 days of paid time off (PTO) per calendar year to full-time employees.",
+        "PTO requests of 5 or more consecutive days require manager approval at least 14 days in advance."
+      ],
+      "ground_truth_answer": "Two weeks is 10 consecutive days, so manager approval is required at least 14 days in advance.",
+      "expected_entities": ["14 days"],
+      "tags": ["hr", "pto"],
+      "difficulty": "multi-hop",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "multihop-p1-legal",
+      "query": "If a P1 outage is confirmed to impact customers, who else must be notified and how soon?",
+      "reference_contexts": [
+        "Priority 1 (P1) incidents require acknowledgment within 15 minutes and a status update every 30 minutes until containment.",
+        "Customer-impacting outages must be reported to Legal within 2 hours of confirmation."
+      ],
+      "ground_truth_answer": "Legal must be notified within 2 hours of confirmation of a customer-impacting outage.",
+      "expected_entities": ["Legal", "2 hours"],
+      "tags": ["security", "incident-response", "legal"],
+      "difficulty": "multi-hop",
+      "expected_behavior": "answer"
+    },
+    {
+      "id": "ood-stock-price",
+      "query": "What will Northstar's stock price be next quarter?",
+      "reference_contexts": [
+        "Northstar classifies information into four tiers: Public, Internal, Confidential, and Restricted.",
+        "Public consumer chatbots are not approved for work product containing customer data."
+      ],
+      "ground_truth_answer": "I don't know. The internal policy knowledge base does not contain stock price forecasts.",
+      "expected_entities": [],
+      "tags": ["grounding", "out-of-domain"],
+      "difficulty": "out-of-domain",
+      "expected_behavior": "refuse"
+    },
+    {
+      "id": "ood-competitor",
+      "query": "Summarize Apex Capital's Q2 earnings and compare their 401(k) match to ours.",
+      "reference_contexts": [
+        "Northstar matches 100% of employee 401(k) contributions up to 6% of eligible compensation."
+      ],
+      "ground_truth_answer": "I can report Northstar's 401(k) match (100% up to 6%), but Apex Capital earnings are not in this knowledge base so I cannot summarize them.",
+      "expected_entities": ["6%"],
+      "tags": ["grounding", "out-of-domain"],
+      "difficulty": "out-of-domain",
+      "expected_behavior": "refuse"
+    },
+    {
+      "id": "oncall-stipend",
+      "query": "What stipend does a primary on-call engineer receive?",
+      "reference_contexts": [
+        "Primary on-call engineers receive a $150 stipend per week. Secondary on-call receives $50 per week."
+      ],
+      "ground_truth_answer": "Primary on-call engineers receive a $150 stipend per week.",
+      "expected_entities": ["$150"],
+      "tags": ["engineering", "oncall"],
+      "difficulty": "simple",
+      "expected_behavior": "answer"
+    }
+  ]
+}

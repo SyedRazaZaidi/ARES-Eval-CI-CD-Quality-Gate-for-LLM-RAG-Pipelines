@@ -1,0 +1,56 @@
+{
+  "corpus_id": "northstar-financial-kb-v1",
+  "organization": "Northstar Financial Services",
+  "documents": [
+    {
+      "id": "pto-policy",
+      "title": "Paid Time Off Policy",
+      "text": "Northstar Financial Services provides 20 days of paid time off (PTO) per calendar year to full-time employees. Unused PTO may be carried over, up to a maximum of 5 days, into the following year. PTO blackout dates run from December 20 through December 31. PTO requests of 5 or more consecutive days require manager approval at least 14 days in advance. Part-time employees accrue PTO on a pro-rated basis."
+    },
+    {
+      "id": "expense-policy",
+      "title": "Travel and Expense Policy",
+      "text": "Meal expenses are reimbursed up to $75 per day while traveling. Itemized receipts are required for any expense greater than $25. Alcohol is not reimbursable. Ground transportation should use the corporate ride-hail account when available. International travel requires VP approval before booking. Expense reports must be submitted within 10 business days of trip completion."
+    },
+    {
+      "id": "data-classification",
+      "title": "Data Classification Standard",
+      "text": "Northstar classifies information into four tiers: Public, Internal, Confidential, and Restricted. Restricted data includes Social Security numbers, account numbers, and authentication secrets. Confidential data includes customer portfolios and unpublished financial models. Restricted data must not be pasted into public large language models. Internal data may be used with approved private model endpoints only."
+    },
+    {
+      "id": "incident-response",
+      "title": "Security Incident Response SLAs",
+      "text": "Priority 1 (P1) incidents require acknowledgment within 15 minutes and a status update every 30 minutes until containment. Priority 2 (P2) incidents require acknowledgment within 1 hour. Priority 3 (P3) incidents are acknowledged within 1 business day. The incident commander is the on-call security engineer. Customer-impacting outages must be reported to Legal within 2 hours of confirmation."
+    },
+    {
+      "id": "remote-work",
+      "title": "Hybrid Work Policy",
+      "text": "Employees are expected on-site at least 3 days per week. Core collaboration hours are 10:00 to 15:00 local time. Managers may grant a fully remote exception for documented medical or caregiving needs. Northstar does not permit work from countries outside the approved list without Security review, because of data residency rules."
+    },
+    {
+      "id": "benefits-401k",
+      "title": "401(k) Retirement Match",
+      "text": "Northstar matches 100% of employee 401(k) contributions up to 6% of eligible compensation. Matching contributions vest on a 3-year graded schedule: 33% after year one, 66% after year two, and 100% after year three. Enrollment is automatic at 4% contribution after 30 days of employment unless the employee opts out."
+    },
+    {
+      "id": "vendor-onboarding",
+      "title": "Vendor Risk Onboarding",
+      "text": "All vendors that process customer data must provide a current SOC 2 Type II report. Vendors without SOC 2 may be accepted only with a compensating controls memo signed by the CISO. Data processing agreements are mandatory before any production traffic. Critical vendors are reassessed annually."
+    },
+    {
+      "id": "model-usage",
+      "title": "Approved Model Usage Policy",
+      "text": "Public consumer chatbots are not approved for work product containing customer data. Approved providers are listed in the AI Systems Register. Prompt logs for production assistants are retained for 90 days. Employees must not disable citation or grounding features on internal RAG assistants. Jailbreak attempts against internal models must be reported as a P2 security event."
+    },
+    {
+      "id": "retention",
+      "title": "Records Retention Schedule",
+      "text": "Customer account records are retained for 7 years after account closure. Chat transcripts with the internal assistant are retained for 90 days. Recruiting interview notes are retained for 1 year. Legal hold supersedes all retention schedules. Destruction of Restricted data requires a dual-control ticket."
+    },
+    {
+      "id": "oncall",
+      "title": "Engineering On-Call Stipend",
+      "text": "Primary on-call engineers receive a $150 stipend per week. Secondary on-call receives $50 per week. Page-out incidents lasting more than 2 hours grant a recovery day to be taken within 14 days. Handoff occurs every Monday at 09:00 UTC."
+    }
+  ]
+}
